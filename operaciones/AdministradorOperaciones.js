@@ -34,11 +34,7 @@ administradorOperaciones.buscarAdministradores = async(req, res)=>{
         }
         else {
             listaadministradores = await administradorModelo.find(filtro)};
-        if(listaadministradores.length > 0){
-            res.status(200).send(listaadministradores);
-        } else {
-            res.status(404).send("No hay nada");
-        }
+        res.status(200).send(listaadministradores);
     } catch (error) {
         res.status(400).send("Mala peticion"+error);
     }
